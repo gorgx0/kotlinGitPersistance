@@ -6,9 +6,12 @@ import javax.persistence.Persistence
 fun main(args: Array<String>) {
 
     val gitCommit = GitCommit(
+            id = null,
             commitId = "commitID",
             longComment = "longComment",
-            shortComment = "shortCOmment"
+            shortComment = "shortCOmment",
+            authorName = "Name",
+            email = "email"
     )
 
     val entityManagerFactory = Persistence.createEntityManagerFactory("gitDb")
