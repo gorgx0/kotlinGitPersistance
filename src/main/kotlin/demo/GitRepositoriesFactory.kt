@@ -14,10 +14,19 @@ object GitRepositoriesFactory {
         for (file in all) {
             println(file)
         }
+
+
+
+
     }
 
     fun findGitRepositories(root: File):Sequence<Git>  {
         val fileRepositoryBuilder = FileRepositoryBuilder()
         return root.walkBottomUp().filter { it -> it.endsWith(".git") }.map { fileRepositoryBuilder.setGitDir(it).readEnvironment().findGitDir().build() }.map { Git(it) }
+    }
+    
+    
+    fun longCalculations() {
+        3+4
     }
 }
